@@ -1,0 +1,35 @@
+concept!: &builder-counter
+  description: A counter with a name and a stored count
+  with:
+    name:
+      the: example.builder-counter/name
+      description: Counter name
+      cardinality: one
+      as: text
+    count:
+      the: example.builder-counter/count
+      description: Current count
+      cardinality: one
+      as: unsigned-integer
+
+command!: &builder-counter/bump
+  description: Add the requested amount to this counter
+  with:
+    subject:
+      the: dom.event.detail/builder-counter
+      description: Counter entity
+      as: entity
+    amount:
+      the: dom.event.detail/amount
+      description: Amount to add
+      as: unsigned-integer
+
+rule!:
+  assert!: builder-counter
+  when:
+    - assert: builder-counter/bump
+      where: { subject: ?this, amount: ?amount }
+    - assert: builder-counter
+      where: { this: ?this, name: ?name, count: ?old }
+    - assert: math/sum
+      where: { of: ?old, with: ?amount, is: ?count }

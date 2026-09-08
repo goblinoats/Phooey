@@ -1,0 +1,6 @@
+# Evaluate this file once to create sample data.
+# The build excludes this file to preserve the stored count.
+builder-counter!: &builder-demo/counter
+  this: id:builder-demo/counter
+  name: My first counter
+  count: 0

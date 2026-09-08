@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="../../counter/src/styles.css">
+<article class="counter-card">
+  <p class="eyebrow">Counter with React controls</p>
+  <h1>{name}</h1>
+  <output class="counter-value" aria-live="polite">{count}</output>
+  <react-counter-controls html:subject={this} html:count={count} onbump=builder-counter/bump>
+    <p>Tonk displays the stored count above.</p>
+  </react-counter-controls>
+</article>
+<script type="module" src="./controls.jsx"></script>

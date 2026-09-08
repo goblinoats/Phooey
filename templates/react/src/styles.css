@@ -1,0 +1,15 @@
+@import './tokens.css';
+@import './counter.css';
+
+.counter-card {
+  max-width: 36rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid var(--counter-border);
+  border-radius: 1rem;
+  background: var(--counter-paper);
+  color: var(--counter-ink);
+  font-family: system-ui, sans-serif;
+}
+.counter-card .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; }
+.counter-card h1 { font-size: 2rem; margin: .5rem 0; }

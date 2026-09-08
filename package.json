@@ -1,0 +1,73 @@
+{
+  "name": "tonk-builder",
+  "version": "0.1.0",
+  "description": "Build HTML, CSS and JavaScript into Tonk asserted-notation YAML.",
+  "type": "module",
+  "bin": {
+    "tonk-build": "./bin/tonk-build.js"
+  },
+  "exports": {
+    "./session": {
+      "types": "./src/session.d.ts",
+      "import": "./src/session.js"
+    },
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./runtime": {
+      "types": "./src/runtime.d.ts",
+      "import": "./src/runtime.js"
+    },
+    "./react": {
+      "types": "./src/react.d.ts",
+      "import": "./src/react.js"
+    }
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "docs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node bin/tonk-build.js build --config examples/counter/tonk.config.js",
+    "dev": "node bin/tonk-build.js watch --config examples/counter/tonk.config.js",
+    "test": "node --test test/*.test.js",
+    "check": "tsc --noEmit",
+    "build:react": "node bin/tonk-build.js build --config examples/react/tonk.config.js"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "esbuild": "^0.25.12",
+    "parse-srcset": "^1.0.2",
+    "parse5": "^7.3.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "happy-dom": "^20.14.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

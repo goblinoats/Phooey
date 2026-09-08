@@ -1,0 +1,5 @@
+.counter-value { display: block; margin: 1rem 0; font-size: 3rem; font-variant-numeric: tabular-nums; }
+builder-counter { display: block; }
+builder-counter button { font: inherit; border: 0; border-radius: 2rem; padding: .8rem 1.4rem; margin-right: .5rem; color: white; background: #315540; cursor: pointer; }
+builder-counter button:hover { background: #213d2c; }
+builder-counter button:focus-visible { outline: 3px solid #a5bd74; outline-offset: 3px; }

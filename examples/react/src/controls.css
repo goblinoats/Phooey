@@ -1,0 +1,11 @@
+:host { display: block; font: inherit; }
+.controls { display: flex; gap: 1rem; align-items: end; }
+label { display: grid; gap: .3rem; font-size: .8rem; }
+input { width: 5rem; padding: .7rem; font: inherit; border: 1px solid #c9cfc3; border-radius: .5rem; }
+button { border: 0; padding: .8rem 1.4rem; border-radius: 2rem; background: #315540; color: white; font: inherit; cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+
+.library { margin-top: 1.5rem; border-top: 1px solid #d7dfd1; padding-top: 1rem; }
+.library h2 { font-size: 1rem; }
+.library input { width: min(14rem, 100%); box-sizing: border-box; }
+.library .controls { flex-wrap: wrap; }

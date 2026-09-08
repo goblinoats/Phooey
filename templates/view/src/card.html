@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="./styles.css">
+<article class="counter-card">
+  <p class="eyebrow">Made with Tonk Builder</p>
+  <h1>{name}</h1>
+  <p>Select Add one to increase the count.</p>
+  <output class="counter-value" aria-live="polite">{count}</output>
+  <builder-counter html:count={count} html:subject={this} onbump=builder-counter/bump>
+    <button type="button" data-action="bump" aria-label="Add one to {count}">Add one</button>
+    <button type="button" data-action="help" aria-expanded="false">How it works</button>
+    <p data-help hidden>Dialog stores the count. The component keeps this help panel state in memory.</p>
+  </builder-counter>
+</article>
+<script type="module" src="./main.js"></script>
